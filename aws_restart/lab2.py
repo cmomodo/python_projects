@@ -1,0 +1,8 @@
+print("Here is my diary: /n")
+f1 = open('diary.txt', 'r')
+print(f1.read())
+f1.close()
+print('now lets create another diary! ')
+f2 = open('diary.txt', 'w')
+f2.write('writing in my diary file')
+f2.close()
