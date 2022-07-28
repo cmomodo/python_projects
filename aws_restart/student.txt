@@ -1,0 +1,54 @@
+//mysql use
+//dummy data from mockaroo.com
+
+create table RESTART (
+student_id int not null,
+student_name varchar(25) not null,
+restart_city varchar(20) not null,
+graduation_date datetime,
+PRIMARY KEY (student_id)
+)
+
+//single input works 
+INSERT INTO RESTART VALUES (11,"Wiley","Zaragoza",curdate());
+//fixed it now inserts all queries
+INSERT INTO RESTART VALUES (12,"Kahaleel","Alicia",curdate()),
+(13,"Cly","Carrières-sur-Seine",curdate()),
+(14,"Marieann","Calde",curdate()),
+(15,"Brion","Karakul’",curdate()),
+(16,"Viviana","Huaqiao",curdate()),
+(17,"Trescha","Borås",curdate()),
+(18,"Ruprecht","Mladá Boleslav",curdate()),
+(19,"Brook","Porto União",curdate()),
+(20,"Delmar","Villa Nueva",curdate()),
+(21,"Indira","Maloyaroslavets",curdate()),
+(22,"Beverlee","Korem",curdate()),
+(23,"Vinnie","Oni",curdate());
+
+
+create table CLOUD_PRACTITIONER (
+student_id int not null,
+certification_date datetime
+);
+
+INSERT INTO CLOUD_PRACTITIONER VALUES (1,"2022-05-09 12:45:56"),
+(2,"2021-11-30 12:35:56"),
+(3,"2022-04-07 12:34:56"),
+(4,"2021-08-03 12:33:51"),
+(5,"2022-02-05 12:32:40"),
+(6,"2021-09-19 12:31:39"),
+(7,"2022-04-21 12:30:29"),
+(8,"2021-10-29 12:29:20"),
+(9,"2022-06-29 12:27:20"),
+(10,"2021-08-17 12:25:52");
+
+//Queries
+SELECT * FROM restart;
+SELECT * FROM CLOUD_PRACTITIONER;
+
+//Join Method
+SELECT RESTART.student_id,RESTART.student_name,CLOUD_PRACTITIONER.certification_date
+FROM RESTART
+INNER JOIN CLOUD_PRACTITIONER ON RESTART.student_id = CLOUD_PRACTITIONER.student_id;
+
+endpoint : database-1.cpqohahliuh5.us-west-2.rds.amazonaws.com
